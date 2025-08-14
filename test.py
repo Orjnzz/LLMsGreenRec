@@ -20,10 +20,10 @@ if __name__ == '__main__':
     with open(test_file, 'r', encoding='utf-8') as f:
         test_data = json.load(f)
 
-    key = conf['deepinfra_api_key']
+    key = conf['api_key']
     if conf['use_wandb']:
         wandb.login(key=conf['wandb_api_key'])
-        conf.pop('deepinfra_api_key')
+        conf.pop('api_key')
         run = wandb.init(
             project=f"PO4ISR_{conf['dataset']}_test",
             config=conf,
@@ -32,7 +32,7 @@ if __name__ == '__main__':
         text_table = wandb.Table(columns=["Input", "Target", "Response"])
     else:
         text_table = None
-    conf['deepinfra_api_key'] = key
+    conf['api_key'] = key
 
     eval_model = Eval(conf, test_data, text_table)
     results, target_rank_list, error_list = eval_model.run(test_prompt)
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     result_save_path = f"./res/metric_res/{conf['dataset']}/"
     if not os.path.exists(result_save_path):
         os.makedirs(result_save_path)
-    results.to_csv(f"{result_save_path}results.csv", index=False)
+    results.to_csv(f"{result_save_path}ressults.csv", index=False)
     
     if conf['use_wandb']:
         run.log({"texts": text_table})
