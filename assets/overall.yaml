@@ -21,7 +21,7 @@ reward_func: 'ndcg'
 
 #Wandb parameter
 use_wandb: True
-wandb_api_key: 'your_wandb_api_key'
+wandb_api_key: "your_wandb_api_key"
 
 # Evaluate
 metrics: ["hit","map","ndcg"]
