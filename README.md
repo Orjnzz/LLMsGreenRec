@@ -1,6 +1,6 @@
 # LLMGreenRec: A Multi-Agent Recommender System for Sustainable E-Commerce
 
-This repository contains the official implementation for the paper **"LLM-based Multi-Agent Recommender System for Sustainable E-Commerce"**. LLMGreenRec is a novel, two-stage framework designed to enhance sustainable product recommendations by leveraging a collaborative multi-agent system powered by Large Language Models..
+This repository contains the official implementation for the paper **"LLM-based Multi-Agent Recommender System for Sustainable E-Commerce"**. LLMGreenRec is a novel, two-stage framework designed to enhance sustainable product recommendations by leveraging a collaborative multi-agent system powered by Large Language Models.
 
 ## Architecture Overview
 
